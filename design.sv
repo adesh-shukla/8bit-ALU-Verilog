@@ -2,8 +2,8 @@ module ALU1(
   input a,
   input b,
   input cin,
-  input sel,
-  input [1:0]sub,
+  input [1:0]sel,
+  input sub,
   output cout,
   output sum,
   output reg q
@@ -31,12 +31,13 @@ endmodule
 module ALU4(
   input [3:0]a,b,
   input [1:0]sel,
+  input cin,
   input sub,
   output cout,
   output [3:0]q,sum
 );
   wire [4:0]c;
-  assign c[0] = sub;
+  assign c[0] = cin^sub;
   genvar i;
   generate
     for(i=0; i<4; i=i+1)begin:alu
@@ -53,4 +54,34 @@ module ALU4(
     end
   endgenerate
   assign cout = c[4];
-endmodule      
+endmodule
+
+module ALU8(
+  input [7:0]a,b,
+  input [1:0]sel,
+  input sub,
+  output cout,
+  output [7:0]sum,q
+);
+  wire c;
+  ALU4 u1(
+    .a(a[3:0]),
+    .b(b[3:0]),
+    .cin(1'b0),
+    .sel(sel),
+    .sub(sub),
+    .cout(c),
+    .sum(sum[3:0]),
+    .q(q[3:0])
+  );
+  ALU4 u2(
+    .a(a[7:4]),
+    .b(b[7:4]),
+    .sel(sel),
+    .cin(c),
+    .sub(sub),
+    .cout(cout),
+    .sum(sum[7:4]),
+    .q(q[7:4])
+  );
+endmodule
