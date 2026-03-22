@@ -23,25 +23,25 @@ It performs basic arithmetic and logical operations and is verified using a test
 
 ###  Subtraction using XOR
 Subtraction is implemented using:
-- `B ^ sub`
-- `cin = sub`
+- B ^ sub
+- cin = sub
 
 This allows:
-- `sub = 0 → Addition`
-- `sub = 1 → Subtraction`
+- sub = 0 → Addition
+- sub = 1 → Subtraction
 
 ---
 
 ##  Module Structure
-- `ALU1` → 1-bit ALU
-- `ALU4` → 4-bit ALU using 4 instances of ALU1
+- ALU1 → 1-bit ALU
+- ALU4 → 4-bit ALU using 4 instances of ALU1
 
 ---
 
 ##  Testbench
-- Inputs are applied using different `sel` and `sub` values
-- Outputs monitored using `$monitor`
-- Waveforms generated using `$dumpfile` and `$dumpvars`
+- Inputs are applied using different sel and sub values
+- Outputs monitored using $monitor
+- Waveforms generated using $dumpfile and $dumpvars
 
 ---
 
@@ -63,9 +63,9 @@ Steps:
 ---
 
 ##  Files
-- `design.sv` → ALU design
-- `testbench.sv` → Testbench
-- `waveform.png` → Simulation waveform
+- design.sv → ALU design
+- testbench.sv → Testbench
+- waveform.png → Simulation waveform
 
 ---
 
