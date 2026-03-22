@@ -1,12 +1,12 @@
 # 4-bit ALU in Verilog
 
-## 📌 Overview
+##  Overview
 This project implements a 4-bit Arithmetic Logic Unit (ALU) using Verilog.  
 It performs basic arithmetic and logical operations and is verified using a testbench and waveform analysis.
 
 ---
 
-## ⚙️ Features
+##  Features
 - 4-bit inputs: A, B
 - Operations supported:
   - AND
@@ -19,9 +19,9 @@ It performs basic arithmetic and logical operations and is verified using a test
 
 ---
 
-## 🧠 Design Concept
+##  Design Concept
 
-### 🔹 Subtraction using XOR
+###  Subtraction using XOR
 Subtraction is implemented using:
 - `B ^ sub`
 - `cin = sub`
@@ -32,26 +32,26 @@ This allows:
 
 ---
 
-## 🧩 Module Structure
+##  Module Structure
 - `ALU1` → 1-bit ALU
 - `ALU4` → 4-bit ALU using 4 instances of ALU1
 
 ---
 
-## 🧪 Testbench
+##  Testbench
 - Inputs are applied using different `sel` and `sub` values
 - Outputs monitored using `$monitor`
 - Waveforms generated using `$dumpfile` and `$dumpvars`
 
 ---
 
-## 📊 Waveform
+##  Waveform
 
 ![Waveform](waveform.png)
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 You can simulate using:
 - Icarus Verilog (EDA Playground)
 
@@ -62,19 +62,19 @@ Steps:
 
 ---
 
-## 📁 Files
+##  Files
 - `design.sv` → ALU design
 - `testbench.sv` → Testbench
 - `waveform.png` → Simulation waveform
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 - Add more operations (shift, compare)
 - Add flags (zero, overflow)
 - Design 8-bit or 16-bit ALU
 
 ---
 
-## 👨‍💻 Author
+##  Author
 Adesh Shukla
